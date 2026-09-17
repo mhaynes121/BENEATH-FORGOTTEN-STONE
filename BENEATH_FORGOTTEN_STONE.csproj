@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <RootNamespace>BENEATH_FORGOTTEN_STONE</RootNamespace>
+    <AssemblyName>BENEATH_FORGOTTEN_STONE</AssemblyName>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <!--
+    No external framework is required for this project: System.Console handles all
+    rendering and input. If Console rendering ever feels too limited (flicker on full
+    redraws, no real CP437 tiles), consider swapping in SadConsole later; it wouldn't
+    require touching the game logic in Core/Dungeon/Entities, only Renderer.cs.
+
+    RogueSharp is another option for FOV/pathfinding/map-gen if you'd rather not
+    maintain FieldOfView.cs and DungeonGenerator.cs by hand: they're written here
+    as plain C# so the whole project builds with zero NuGet dependencies.
+  -->
+
+</Project>
