@@ -72,3 +72,27 @@ Actively in development as a solo project. Current in-game version is tracked in
 ## License
 
 No license has been chosen yet. Until one is added, all rights are reserved by default — open an issue or reach out if you'd like to use or contribute to the code.
+
+## AI Usage
+
+This project is partially designed as a way for me to get more familiar with using AI tools such as the various ClaudeAI tools and ChatGPT.
+I would say that around 90% of the actual code is AI generated and most of the details for items, monsters, spells, skills, etc are also AI
+generated. Many are then modified to adjust various settings. 
+
+The process I have followed for this project is as follows:
+
+Initially I start in ChatGPT with a broad concept and I explain what I want it to do. An example might be the spell system. Here is an example of how I might build that out (after each step I would have it display what was added to the plan of action so we could catch errors and make changes early):
+
+- I want a spell system that allows a character to cast spells. Spells should be able to be cast on the character themselves or in a specified direction. Let's start building out a plan of action.
+- Let's expand upon that and add the concept of positive and negative effects. Positive effects will be considered as just 'normal' effects while negative effects will show as a 'curse'.
+- We don't want the player's character to get every spell at lvl 1 so let's add a required level to each spell. Go ahead and populate with best guess on lvl acquired and I'll fine tune.
+- Players should not get spells out of thin air. Mages should require reading a scroll to gain knowledge of a spell and priest should have to read a spellbook.
+- Reading a scroll or spellbook should not be a guaranteed success. Successfully reading a scroll or spellbook should be based off of primary stat and luck to a minor degree.
+- We need to add the concept of instant and over time spells. Instant spells should apply their effect in one turn while over time spells should have their effects spread out over the specified number of turns.
+- Spells that are cast in a direction should show a moving character on the screen until they hit something or end their range. This 'animation' should run outside of the main game loop so that monsters can't 'dodge' spells by moving to a new tile. Mimic the display mechanic of thrown items / projectiles.
+- There should be a new screen added that shows the user all of the spells they can get, what level they get them, and what they currently have. We will distinguish between what they know and don't know by using different font colors to highlight the learned ones.
+- Ok, now give me the complete plan of action that I can provide to another AI agent so that it knows what feature we're trying to implement and how we want it implemented.
+
+Once that is done I would take the project plan provided by ChatGPT and add it to the Claude project. Then I would have Claude review the plan of action and have it actually generate a Claude plan for the changes it's going to make to satisfy the requirements. Once I've had a chance to review the Claude plan I will make any required changes or add additional details if I realize I missed something. Then I would have it go ahead and implement those changes. 
+
+After every change I have Claude setup to run through all of the existing and newly added test cases. If those succeed I will start a few games and begin testing out the functionality. 
