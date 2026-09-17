@@ -174,6 +174,11 @@ public static class ConsoleSafety
 
     public static void TryFitConsole(int width, int height)
     {
+        if (!OperatingSystem.IsWindows())
+        {
+            return;
+        }
+
         try
         {
             int desiredWidth = Math.Min(width, Console.LargestWindowWidth);

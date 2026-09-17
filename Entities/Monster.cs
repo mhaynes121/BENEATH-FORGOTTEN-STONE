@@ -20,7 +20,7 @@ public class Monster : Actor
         public int Mana;
         public int Agility = 10;
         public double DifficultyRating = 1.0;
-        public long? XpRewardOverride;
+        public long? XpRewardOverride = null;
         public Spell[] KnownSpells = Array.Empty<Spell>();
         public string ShortDescription = "";
         public string LongDescription = "";
@@ -34,7 +34,7 @@ public class Monster : Actor
         public CreatureType CreatureType = CreatureType.Other;
 
         /// <summary>Null (the default for every archetype above) means "use CreatureType's default" -- see CreatureCapabilities.GetDefaults. Set only to deviate from that default for an unusual individual archetype.</summary>
-        public bool? CanCarryItemsOverride;
+        public bool? CanCarryItemsOverride = null;
         public bool? CanEquipItemsOverride;
         public bool? CanUseItemsOverride;
 
